@@ -6,8 +6,8 @@ from typing import Iterable
 from bson import ObjectId
 from motor.motor_asyncio import AsyncIOMotorCollection
 
+from app.api.users.schemas import UserCreate, UserUpdate
 from app.models.user import UserInDB
-from app.schemas.user import UserCreate, UserUpdate
 
 
 class UserRepository(ABC):

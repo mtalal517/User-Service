@@ -3,8 +3,8 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.responses import RedirectResponse
 
-from app.api.routes import users
-from app.core.config import get_settings
+from app.api.users.routes import router as users_router
+from app.config.config import get_settings
 from app.db.mongodb import MongoConnectionManager
 
 
@@ -23,7 +23,7 @@ def create_app(with_lifespan: bool = True) -> FastAPI:
         version="1.0.0",
         lifespan=lifespan if with_lifespan else None,
     )
-    application.include_router(users.router)
+    application.include_router(users_router)
 
     @application.get("/", include_in_schema=False)
     async def redirect_to_docs() -> RedirectResponse:

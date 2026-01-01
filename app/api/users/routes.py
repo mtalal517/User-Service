@@ -1,8 +1,8 @@
 from fastapi import APIRouter, Depends, status
 
-from app.api.dependencies.db import get_user_service
-from app.schemas.user import UserCreate, UserResponse, UserUpdate
-from app.services.user_service import UserService
+from app.api.injector_configuration import get_user_service
+from app.api.users.schemas import UserCreate, UserResponse, UserUpdate
+from app.api.users.services import UserService
 
 router = APIRouter(prefix="/users", tags=["users"])
 

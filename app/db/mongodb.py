@@ -2,7 +2,7 @@ from typing import AsyncIterator
 
 from motor.motor_asyncio import AsyncIOMotorClient, AsyncIOMotorCollection
 
-from app.core.config import Settings
+from app.config.config import Settings
 
 
 class MongoConnectionManager:

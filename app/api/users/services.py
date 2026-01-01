@@ -1,7 +1,7 @@
 from fastapi import HTTPException, status
 
+from app.api.users.schemas import UserCreate, UserResponse, UserUpdate
 from app.db.repository import UserRepository
-from app.schemas.user import UserCreate, UserResponse, UserUpdate
 
 
 class UserService:

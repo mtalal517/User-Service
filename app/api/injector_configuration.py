@@ -1,8 +1,8 @@
 from fastapi import Depends, Request
 
+from app.api.users.services import UserService
 from app.db.mongodb import MongoConnectionManager
 from app.db.repository import MongoUserRepository, UserRepository
-from app.services.user_service import UserService
 
 
 def get_user_repository(request: Request) -> UserRepository:

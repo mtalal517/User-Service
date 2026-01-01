@@ -2,11 +2,11 @@ import uuid
 
 from fastapi.testclient import TestClient
 
-from app.api.dependencies.db import get_user_repository
+from app.api.injector_configuration import get_user_repository
+from app.api.users.schemas import UserCreate, UserUpdate
 from app.db.repository import UserRepository
 from app.main import create_app
 from app.models.user import UserInDB
-from app.schemas.user import UserCreate, UserUpdate
 
 
 class InMemoryUserRepository(UserRepository):
